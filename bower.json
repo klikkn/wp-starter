@@ -1,0 +1,17 @@
+{
+  "name": "wp-custom-pack",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Klikkn"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/klikkn/wp-custom-pack",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
