@@ -11,27 +11,27 @@ var gulp = require('gulp'),
     filter = require('gulp-filter');
 
 // Путь до темы на локольном хосте
-var path_to_theme = '';
+var path_to_theme = '../../local/wp-custom-pack/wp-content/themes/wp-custom-theme/';
 
 var path = {
     build: { //Тут мы укажем куда складывать готовые после сборки файлы
         js: path_to_theme + '/js/',
         css: path_to_theme + '/css/',
-        theme: path_to_theme + '/',
+        theme: path_to_theme + '',
         img: path_to_theme + '/img/',
         fonts: path_to_theme + '/fonts/'
     },
     src: { //Пути откуда брать исходники
         js: 'src/js/main.js',
         style: 'src/style/main.less',
-        theme: path_to_theme + '/theme/**/*.*',
+        theme: 'src/theme/**/*.*',
         img: 'src/img/**/*.*',
         fonts: 'src/fonts/**/*.*'
     },
     watch: { //Тут мы укажем, за изменением каких файлов мы хотим наблюдать
         js: 'src/js/**/*.js',
         style: 'src/style/**/*.less',
-        theme: path_to_theme + '/theme/**/*.*',
+        theme: 'src/theme/**/*.*',
         img: 'src/img/**/*.*',
         fonts: 'src/fonts/**/*.*'
     }
@@ -63,7 +63,7 @@ gulp.task('vendors-css', function() {
 gulp.task('js', function() {
     gulp.src(path.src.js)
         .pipe(plumber())
-        .pipe(rigger())
+        // .pipe(rigger())
         .pipe(uglify())
         .pipe(gulp.dest(path.build.js));
 });
@@ -98,7 +98,7 @@ gulp.task('build', [
     'vendors-js',
     'js',
     'style',
-    'theme'
+    'theme',
     'fonts',
     'images'
 ]);
