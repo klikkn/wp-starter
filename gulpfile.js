@@ -9,6 +9,7 @@ var gulp = require('gulp'),
     less_import = require('gulp-less-import'),
     vendors = require('main-bower-files'),
     filter = require('gulp-filter');
+    bs = require('browser-sync').create();
 
 // Путь до темы на локольном хосте
 var path_to_theme = '../../local/wp-custom-pack/wp-content/themes/wp-custom/';
@@ -37,6 +38,14 @@ var path = {
     }
 };
 
+gulp.task('browser-sync', function() {
+    bs.init({
+        proxy: 'wp.dev',
+        logPrefix: "wp-custom",
+        port: 9000
+    });
+});
+
 gulp.task('vendors-js', function() {
     return gulp.src(vendors())
         .pipe(filter('**/*.js', {
@@ -61,15 +70,14 @@ gulp.task('vendors-css', function() {
 });
 
 gulp.task('js', function() {
-    gulp.src(path.src.js)
+   return gulp.src(path.src.js)
         .pipe(plumber())
-        // .pipe(rigger())
         .pipe(uglify())
         .pipe(gulp.dest(path.build.js));
 });
 
 gulp.task('style', function() {
-    gulp.src(path.src.style)
+   return gulp.src(path.src.style)
         .pipe(plumber())
         .pipe(less_import('main.less'))
         .pipe(less())
@@ -79,17 +87,17 @@ gulp.task('style', function() {
 });
 
 gulp.task('images', function() {
-    gulp.src(path.src.img)
+   return gulp.src(path.src.img)
         .pipe(gulp.dest(path.build.img));
 });
 
 gulp.task('fonts', function() {
-    gulp.src(path.src.fonts)
+   return gulp.src(path.src.fonts)
         .pipe(gulp.dest(path.build.fonts));
 });
 
 gulp.task('theme', function() {
-    gulp.src(path.src.theme)
+   return gulp.src(path.src.theme)
         .pipe(gulp.dest(path.build.theme));
 });
 
@@ -106,16 +114,20 @@ gulp.task('build', [
 gulp.task('watch', function() {
     watch([path.watch.style], function(event, cb) {
         gulp.start('style');
+        bs.reload();
     });
     watch([path.watch.js], function(event, cb) {
         gulp.start('js');
+        bs.reload();
     });
     watch([path.watch.theme], function(event, cb) {
         gulp.start('theme');
+        bs.reload();
     });
     watch([path.watch.img], function(event, cb) {
         gulp.start('images');
+        bs.reload();
     });
 });
 
-gulp.task('default', ['build', 'watch']);
+gulp.task('default', ['browser-sync', 'build', 'watch']);
