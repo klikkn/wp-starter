@@ -11,7 +11,7 @@ var gulp = require('gulp'),
     filter = require('gulp-filter');
 
 // Путь до темы на локольном хосте
-var path_to_theme = '../../local/wp-custom-pack/wp-content/themes/wp-custom-theme/';
+var path_to_theme = '../../local/wp-custom-pack/wp-content/themes/wp-custom/';
 
 var path = {
     build: { //Тут мы укажем куда складывать готовые после сборки файлы
