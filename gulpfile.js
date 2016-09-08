@@ -9,10 +9,10 @@ var gulp = require('gulp'),
     less_import = require('gulp-less-import'),
     vendors = require('main-bower-files'),
     filter = require('gulp-filter');
-    bs = require('browser-sync').create();
+bs = require('browser-sync').create();
 
 // Путь до темы на локольном хосте
-var path_to_theme = '../../local/wp-custom-pack/wp-content/themes/wp-custom/';
+var path_to_theme = '../../local/wp-custom-pack/wp-content/themes/wp-custom';
 
 var path = {
     build: { //Тут мы укажем куда складывать готовые после сборки файлы
@@ -70,35 +70,47 @@ gulp.task('vendors-css', function() {
 });
 
 gulp.task('js', function() {
-   return gulp.src(path.src.js)
+    return gulp.src(path.src.js)
         .pipe(plumber())
         .pipe(uglify())
-        .pipe(gulp.dest(path.build.js));
+        .pipe(gulp.dest(path.build.js))
+        .pipe(bs.reload({
+            stream: true
+        }));
 });
 
 gulp.task('style', function() {
-   return gulp.src(path.src.style)
+    return gulp.src(path.src.style)
         .pipe(plumber())
         .pipe(less_import('main.less'))
         .pipe(less())
         .pipe(autoprefixer())
         .pipe(cssnano())
-        .pipe(gulp.dest(path.build.css));
+        .pipe(gulp.dest(path.build.css))
+        .pipe(bs.reload({
+            stream: true
+        }));
 });
 
 gulp.task('images', function() {
-   return gulp.src(path.src.img)
-        .pipe(gulp.dest(path.build.img));
+    return gulp.src(path.src.img)
+        .pipe(gulp.dest(path.build.img))
+        .pipe(bs.reload({
+            stream: true
+        }));
 });
 
 gulp.task('fonts', function() {
-   return gulp.src(path.src.fonts)
-        .pipe(gulp.dest(path.build.fonts));
+    return gulp.src(path.src.fonts)
+        .pipe(gulp.dest(path.build.fonts))
 });
 
 gulp.task('theme', function() {
-   return gulp.src(path.src.theme)
-        .pipe(gulp.dest(path.build.theme));
+    return gulp.src(path.src.theme)
+        .pipe(gulp.dest(path.build.theme))
+        .pipe(bs.reload({
+            stream: true
+        }));
 });
 
 gulp.task('build', [
@@ -114,19 +126,15 @@ gulp.task('build', [
 gulp.task('watch', function() {
     watch([path.watch.style], function(event, cb) {
         gulp.start('style');
-        bs.reload();
     });
     watch([path.watch.js], function(event, cb) {
         gulp.start('js');
-        bs.reload();
     });
     watch([path.watch.theme], function(event, cb) {
         gulp.start('theme');
-        bs.reload();
     });
     watch([path.watch.img], function(event, cb) {
         gulp.start('images');
-        bs.reload();
     });
 });
 
