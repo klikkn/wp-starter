@@ -18,5 +18,17 @@
 <body <?php body_class(); ?>>
 
 <div class="header">
-	
+	<a href='/' class="header__logo">
+		<img src="<?php bloginfo('stylesheet_directory'); ?>/img/logo.png">
+	</a>
+
+	<div class="header__callback">
+		<a href="+7 (890) 123-45-67">+7 (890) 123-45-67</a>
+		<button class="button">
+			Оформить заявку
+		</button>
+	</div>
 </div>
+
+<div class="content">
+

@@ -1,15 +1,18 @@
-var gulp = require('gulp'),
-    watch = require('gulp-watch'),
-    concat = require('gulp-concat'),
-    cssnano = require('gulp-cssnano'),
-    plumber = require('gulp-plumber'),
-    autoprefixer = require('gulp-autoprefixer'),
-    uglify = require('gulp-uglify'),
-    less = require('gulp-less'),
-    less_import = require('gulp-less-import'),
-    vendors = require('main-bower-files'),
-    filter = require('gulp-filter');
-bs = require('browser-sync').create();
+import gulp from 'gulp';
+import watch from 'gulp-watch';
+import concat from 'gulp-concat';
+import cssnano from 'gulp-cssnano';
+import plumber from 'gulp-plumber';
+import autoprefixer from 'gulp-autoprefixer';
+import uglify from 'gulp-uglify';
+import less from 'gulp-less';
+import vendors from 'main-bower-files';
+import filter from 'gulp-filter';
+import bs from 'browser-sync';
+import webpack from 'webpack-stream';
+import gulpif from 'gulp-if';
+
+let dev = process.env.NODE_ENV !== 'production';
 
 // Путь до темы на локольном хосте
 var path_to_theme = '../../local/wp-custom-pack/wp-content/themes/wp-custom';
@@ -70,9 +73,28 @@ gulp.task('vendors-css', function() {
 });
 
 gulp.task('js', function() {
+
+    let options = {
+        entry: './' + path.src.js,    
+        output: {
+            filename: 'main.js'
+        },
+        module: {
+            loaders: [{
+                test: /\.js$/,
+                exclude: /node_modules/,
+                loader: 'babel',
+                query: {
+                    presets: ['es2015']
+                }
+            }]
+        }
+    };
+
     return gulp.src(path.src.js)
         .pipe(plumber())
-        .pipe(uglify())
+        .pipe(webpack(options))
+        .pipe(gulpif(!dev, uglify()))
         .pipe(gulp.dest(path.build.js))
         .pipe(bs.reload({
             stream: true
@@ -82,10 +104,9 @@ gulp.task('js', function() {
 gulp.task('style', function() {
     return gulp.src(path.src.style)
         .pipe(plumber())
-        .pipe(less_import('main.less'))
         .pipe(less())
         .pipe(autoprefixer())
-        .pipe(cssnano())
+        .pipe(gulpif(!dev, cssnano()))
         .pipe(gulp.dest(path.build.css))
         .pipe(bs.reload({
             stream: true
