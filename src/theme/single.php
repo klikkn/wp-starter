@@ -10,7 +10,7 @@
 		<?php the_time('j F Y') ?>
 	</div>
 
-	<div class="single__content">
+	<div class="content single__content">
 		<?php the_content(); ?>
 	</div>
 

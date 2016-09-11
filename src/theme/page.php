@@ -1,17 +1,19 @@
 <?php get_header() ?>
 
-	<?php
-		$page_data = get_page(10);
-		$title = apply_filters('the_title', $page_data->post_title);
-		$content = apply_filters('the_content', $page_data->post_content);
-	?>
+	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-	<h1 class="title index__title">
-		<?php echo $title; ?>
+	<h1 class="title page__title">
+	 	<?php the_title(); ?>
 	</h1>
 
-	<div class="content index__content">
-		<?php echo $content; ?>
+	<div class="page__date">
+		<?php the_time('j F Y') ?>
 	</div>
+
+	<div class="content page__content">
+		<?php the_content(); ?>
+	</div>
+
+	<?php endwhile; endif; ?>
 
 <?php get_footer() ?>
