@@ -27,7 +27,7 @@ var path_to_theme = ../localhost/site/wp-content/themes/theme-name
 ```sh
 gulp.task('browser-sync', function() {
     bs.init({
-        proxy: '__wp.dev__',
+        proxy: **'wp.dev'**,
         logPrefix: "wp-starter-kit",
         port: 9000
     });
