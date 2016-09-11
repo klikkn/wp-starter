@@ -6,7 +6,7 @@ $('.j-open-callback').magnificPopup({
     removalDelay: 500,
     callbacks: {
         beforeOpen: function() {
-            this.st.mainCl	ass = "mfp-zoom-in";
+            this.st.mainClass = "mfp-zoom-in";
         }
     },
 });
