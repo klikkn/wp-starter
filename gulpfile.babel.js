@@ -44,7 +44,7 @@ var path = {
 gulp.task('browser-sync', function() {
     bs.init({
         proxy: 'wp.dev',
-        logPrefix: "wp-custom",
+        logPrefix: "wp-starter-kit",
         port: 9000
     });
 });

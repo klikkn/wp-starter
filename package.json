@@ -1,5 +1,5 @@
 {
-  "name": "wp-custom-pack",
+  "name": "wp-starter-kit",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -13,14 +13,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/klikkn/wp-custom-pack.git"
+    "url": "git+https://github.com/klikkn/wp-starter-kit.git"
   },
   "author": "Klikkn",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/klikkn/wp-custom-pack/issues"
+    "url": "https://github.com/klikkn/wp-starter-kit/issues"
   },
-  "homepage": "https://github.com/klikkn/wp-custom-pack#readme",
+  "homepage": "https://github.com/klikkn/wp-starter-kit#readme",
   "dependencies": {},
   "devDependencies": {
     "babel-core": "^6.14.0",

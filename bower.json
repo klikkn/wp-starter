@@ -1,12 +1,12 @@
 {
-  "name": "wp-custom-pack",
+  "name": "wp-starter-kit",
   "description": "",
   "main": "index.js",
   "authors": [
     "Klikkn"
   ],
   "license": "ISC",
-  "homepage": "https://github.com/klikkn/wp-custom-pack",
+  "homepage": "https://github.com/klikkn/wp-starter-kit",
   "ignore": [
     "**/.*",
     "node_modules",
