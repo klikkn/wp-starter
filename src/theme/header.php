@@ -63,4 +63,5 @@
 </div>
 
 <div class="main">
+	<div class="wrapper-inner">
 
