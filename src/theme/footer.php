@@ -1,5 +1,6 @@
 
 <div class="footer">
+
 	<div class="vcard">
         <div class="vcard__org">
             <span class="category">Кафе</span>
@@ -21,11 +22,15 @@
     	    	<span class="value-title" title="http://www.romashka-cafe.ru"> </span>
     	    </span>
         </div>
-
-    	<div class="footer__copyright">
-    		Copyright © 2016
-    	</div>
     </div>
+
+    <div class="footer__copyright">
+        Copyright © 2016
+    </div>
+</div>
+
+<div id="callback" class="form mfp-hide">
+    
 </div>
 
 </div>

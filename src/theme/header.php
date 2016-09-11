@@ -27,9 +27,9 @@
 
 		<div class="header__callback">
 			<a href="+7 (890) 123-45-67">+7 (890) 123-45-67</a>
-			<button class="button">
+			<a href="#callback" class="button j-open-callback">
 				Оформить заявку
-			</button>
+			</a>
 		</div>
 	</div>
 

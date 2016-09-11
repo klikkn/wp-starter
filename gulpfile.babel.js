@@ -11,6 +11,7 @@ import filter from 'gulp-filter';
 import bs from 'browser-sync';
 import webpack from 'webpack-stream';
 import gulpif from 'gulp-if';
+import addsrc from 'gulp-add-src';
 
 let dev = process.env.NODE_ENV !== 'production';
 
@@ -30,7 +31,8 @@ var path = {
         style: 'src/style/main.less',
         theme: 'src/theme/**/*.*',
         img: 'src/img/**/*.*',
-        fonts: 'src/fonts/**/*.*'
+        fonts: 'src/fonts/**/*.*',
+        vendors: 'src/vendors/**/*.*'
     },
     watch: { //Тут мы укажем, за изменением каких файлов мы хотим наблюдать
         js: 'src/js/**/*.js',
@@ -50,10 +52,13 @@ gulp.task('browser-sync', function() {
 });
 
 gulp.task('vendors-js', function() {
+    let f = filter(['**/*.js'], {
+        restore: true
+    });
+
     return gulp.src(vendors())
-        .pipe(filter('**/*.js', {
-            restore: true
-        }))
+        .pipe(addsrc(path.src.vendors))
+        .pipe(f)
         .pipe(plumber())
         .pipe(uglify())
         .pipe(concat('vendors.js'))
@@ -61,11 +66,15 @@ gulp.task('vendors-js', function() {
 });
 
 gulp.task('vendors-css', function() {
+    let f = filter(['**/*.css', '**/*.less'], {
+        restore: true
+    });
+
     return gulp.src(vendors())
-        .pipe(filter('**/*.css', {
-            restore: true
-        }))
+        .pipe(addsrc(path.src.vendors))
+        .pipe(f)
         .pipe(plumber())
+        .pipe(less())
         .pipe(concat('vendors.css'))
         .pipe(autoprefixer())
         .pipe(cssnano())
@@ -75,7 +84,7 @@ gulp.task('vendors-css', function() {
 gulp.task('js', function() {
 
     let options = {
-        entry: './' + path.src.js,    
+        entry: './' + path.src.js,
         output: {
             filename: 'main.js'
         },
