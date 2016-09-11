@@ -7,25 +7,25 @@
 1. Склонируйте приложение
 
 ```sh
-    git clone https://github.com/klikkn/wp-starter-kit
+git clone https://github.com/klikkn/wp-starter-kit
 ```
 
 2. Установите зависимости
 
 ```sh
-    npm install
+npm install
 ```
 
 3.  Укажите путь до папки с темой в файле gulp.babel.js
 
 ```sh
-		var path_to_theme = ../localhost/site/wp-content/themes/theme-name
+var path_to_theme = ../localhost/site/wp-content/themes/theme-name
 ```
 
 4.  Введите локальный домен вашего сайта в в файле gulp.babel.js
 
 ```sh
-		gulp.task('browser-sync', function() {
+gulp.task('browser-sync', function() {
     bs.init({
         proxy: **'wp.dev'**,
         logPrefix: "wp-starter-kit",
@@ -37,7 +37,7 @@
 5. Запустите приложение
 
 ```sh
-    gulp
+gulp
 ```
 
 Сайт автоматически откроется в браузере по адресу http//localhost:9000.
