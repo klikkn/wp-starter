@@ -25,13 +25,13 @@ git clone https://github.com/klikkn/wp-starter-kit
 npm install
 ```
 
-3.  Укажите путь до папки с темой в файле gulp.babel.js
+3. Укажите путь до папки с темой в файле gulp.babel.js
 
 ```sh
 var path_to_theme = ../localhost/site/wp-content/themes/theme-name
 ```
 
-4.  Введите локальный домен вашего сайта в в файле gulp.babel.js
+4. Введите локальный домен вашего сайта в в файле gulp.babel.js
 
 ```sh
 gulp.task('browser-sync', function() {
