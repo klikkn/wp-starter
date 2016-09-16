@@ -1,3 +1,13 @@
+<?php 
+/*
+	Страница отображения категории
+	
+	Предусмотрен вывод дочерних категорий.
+	Если он не нужен оставьте между header и footer только строчку
+	<?php get_template_part( 'templates/category', 'default' ); ?>
+*/
+?>
+
 <?php get_header() ?>
 
 	<?php 

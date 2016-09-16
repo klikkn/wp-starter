@@ -1,3 +1,9 @@
+<?php 
+/*
+    Футер
+*/
+?>
+
 </div> <!-- wrapper-inner -->
 </div> <!-- main -->
 

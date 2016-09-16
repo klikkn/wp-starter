@@ -1,3 +1,17 @@
+<!-- В разработке -->
+
+<?php 
+/*
+  Для работы миниатюр категорий нужен плагин Categories Images
+*/
+?>
+
+<?php 
+  // Если нужно фильтровать по id категории
+  // $category = get_the_category();
+  // $cat_id = $category[0]->term_id;
+?>
+
 <?php get_header() ?>
 <h1 class="title category__title">
 <?php echo single_cat_title() ?>
