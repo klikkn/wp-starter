@@ -4,11 +4,11 @@
 */
 ?>
 
-</div> <!-- wrapper-inner -->
+</div> <!-- inner -->
 </div> <!-- main -->
 
 <div class="footer">
-    <div class="wrapper-inner">
+    <div class="inner">
     	<div class="vcard">
             <div class="vcard__org">
                 <span class="category">Кафе</span>
@@ -40,8 +40,8 @@
 
 </div> <!-- wrapper-inner -->
 
-<div id="callback" class="form mfp-hide">
-    
+<div id="callback" class="form mfp-hide mfp-with-anim">
+    <div>Привет</div>
 </div>
 
 <script src="<?php bloginfo('stylesheet_directory'); ?>/js/vendors.js"></script>

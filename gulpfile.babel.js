@@ -77,7 +77,7 @@ gulp.task('vendors-css', function() {
         .pipe(less())
         .pipe(concat('vendors.css'))
         .pipe(autoprefixer())
-        .pipe(cssnano())
+        //.pipe(cssnano())
         .pipe(gulp.dest(path.build.css))
 });
 

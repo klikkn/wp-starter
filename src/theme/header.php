@@ -20,7 +20,7 @@
 <div class="wrapper">
 
 <div class="header">
-	<div class="wrapper-inner">
+	<div class="inner">
 		<a href='/' class="header__logo">
 			<img src="<?php bloginfo('stylesheet_directory'); ?>/img/logo.png">
 		</a>
@@ -41,7 +41,6 @@
 					'theme_location' => '',
 					'menu' => 'Верхнее меню',
 					'container' => '',
-					'container_class' => 'menu-{menu-slug}-container',
 					'container_id' => '',
 					'menu_class' => 'menu',
 					'menu_id' => '',
@@ -63,5 +62,5 @@
 </div>
 
 <div class="main">
-	<div class="wrapper-inner">
+	<div class="inner">
 

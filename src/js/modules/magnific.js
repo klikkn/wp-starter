@@ -2,7 +2,7 @@
 
 $('.j-open-callback').magnificPopup({
     type: 'inline',
-    preloader: 500,
+    preloader: false,
     removalDelay: 500,
     callbacks: {
         beforeOpen: function() {
