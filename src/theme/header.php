@@ -10,7 +10,7 @@
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
 	<link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/css/vendors.css" />
-	<link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/css/main.css" />
+	<link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/css/index.css" />
 
 	<?php wp_head(); ?>
 </head>

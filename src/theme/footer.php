@@ -43,7 +43,7 @@
 </div>
 
 <script src="<?php bloginfo('stylesheet_directory'); ?>/js/vendors.js"></script>
-<script src="<?php bloginfo('stylesheet_directory'); ?>/js/main.js"></script>
+<script src="<?php bloginfo('stylesheet_directory'); ?>/js/index.js"></script>
 
 <?php wp_footer(); ?>
 
