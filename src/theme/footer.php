@@ -38,8 +38,6 @@
     </div>
 </div>
 
-</div> <!-- wrapper-inner -->
-
 <div id="callback" class="form mfp-hide mfp-with-anim">
     <div>Привет</div>
 </div>

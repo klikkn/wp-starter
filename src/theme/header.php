@@ -17,8 +17,6 @@
 
 <body <?php body_class(); ?>>
 
-<div class="wrapper">
-
 <div class="header">
 	<div class="inner">
 		<a href='/' class="header__logo">
