@@ -16,7 +16,7 @@
 
 Укажите путь до папки с темой и проксируемый домен, в файле с константами
 
-```./gulp/const.js```
+```gulp/const.js```
 
 
 Запустите приложение
@@ -36,4 +36,4 @@
  4. [Advanced Custom Fields](https://wordpress.org/plugins/advanced-custom-fields/)
  5. [wp-maintenance-mode](https://ru.wordpress.org/plugins/wp-maintenance-mode/)
  6. [Filenames to latin](https://wordpress.org/plugins/filenames-to-latin/)
- 7. [Categories Images](https://wordpress.org/plugins/categories-images/)ъ
+ 7. [Categories Images](https://wordpress.org/plugins/categories-images/)
