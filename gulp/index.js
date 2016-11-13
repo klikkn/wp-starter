@@ -1,0 +1,7 @@
+export Assets from './tasks/assets'
+export Bower from './tasks/bower'
+export BSync from './tasks/browser-sync'
+export Javascript from './tasks/javascript'
+export Styles from './tasks/styles'
+export Dist from './tasks/dist'
+export Watch from './tasks/watch'

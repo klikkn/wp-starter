@@ -9,8 +9,8 @@
 	<link rel="shortcut icon" href="<?php bloginfo('stylesheet_directory'); ?>/img/favicon.ico" type="image/png">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
-	<link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/css/vendors.css" />
-	<link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/css/index.css" />
+	<link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/css/bundle.css" />
+	<link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/css/style.css" />
 
 	<?php wp_head(); ?>
 </head>

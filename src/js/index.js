@@ -1,1 +1,0 @@
-require('./modules/magnific.js');

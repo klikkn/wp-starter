@@ -42,8 +42,8 @@
     <div>Привет</div>
 </div>
 
-<script src="<?php bloginfo('stylesheet_directory'); ?>/js/vendors.js"></script>
-<script src="<?php bloginfo('stylesheet_directory'); ?>/js/index.js"></script>
+<script src="<?php bloginfo('stylesheet_directory'); ?>/js/bundle.js"></script>
+<script src="<?php bloginfo('stylesheet_directory'); ?>/js/bootstrap.js"></script>
 
 <?php wp_footer(); ?>
 
