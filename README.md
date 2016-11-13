@@ -2,54 +2,21 @@
 
 Данный пакет предназначен для быстрой разработки темы для Wordpress.
 
-Файлы содержащие название проекта:
-
-```sh
-package.json
-bower.json
-gulp.babel.js
-src/theme/style.css
-```
-
 # Установка
 
 Склонируйте приложение
-
-	```sh
-	git clone https://github.com/klikkn/wp-starter-kit
-	```
+```git clone https://github.com/klikkn/wp-starter-kit```
 
 Установите зависимости
+```npm install```
 
-	```sh
-	npm install
-	```
-
-Укажите путь до папки с темой в файле gulp.babel.js
-
-	```sh
-	var path_to_theme = ../localhost/site/wp-content/themes/theme-name
-	```
-
-Введите локальный домен вашего сайта в в файле gulp.babel.js
-
-	```sh
-	gulp.task('browser-sync', function() {
-	    bs.init({
-	        proxy: **'wp.dev'**,
-	        logPrefix: "wp-starter-kit",
-	        port: 9000
-	    });
-	});
-	```
+Укажите путь до папки с темой и проксируемый домен, в файле с константами
+```gulp/const.js```
 
 Запустите приложение
+```npm start```
 
-	```sh
-	gulp
-	```
-
-Сайт автоматически откроется в браузере по адресу http://localhost:9000.
+Сайт автоматически откроется в браузере по адресу http://localhost:9000
 
 # Плагины
 
