@@ -6,22 +6,22 @@
 
 Склонируйте приложение
 
-```git clone https://github.com/klikkn/wp-starter-kit```
+`git clone https://github.com/klikkn/wp-starter-kit`
 
 
 Установите зависимости
 
-```npm install```
+`npm install`
 
 
 Укажите путь до папки с темой и проксируемый домен, в файле с константами
 
-```gulp/const.js```
+`gulp/const.js`
 
 
 Запустите приложение
 
-```npm start```
+`npm start`
 
 
 Сайт автоматически откроется в браузере по адресу http://localhost:9000
