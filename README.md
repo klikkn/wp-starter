@@ -15,6 +15,9 @@
 
 `bower install`
 
+Windows
+`./node_modules/.bin/bower install`
+
 
 Укажите путь до папки с темой и проксируемый домен, в файле с константами
 
