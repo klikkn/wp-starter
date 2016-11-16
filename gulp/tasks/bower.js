@@ -1,32 +1,32 @@
-import gulp from 'gulp'
-import path from 'path'
-import notify from 'gulp-notify'
-import concat from 'gulp-concat'
-import bowerFiles from 'main-bower-files'
-import filter from 'gulp-filter'
-import uglify from 'gulp-uglify'
-import cssnano from 'gulp-cssnano'
-import merge from 'merge-stream'
+var gulp = require('gulp')
+var path = require('path')
+var notify = require('gulp-notify')
+var concat = require('gulp-concat')
+var bowerFiles = require('main-bower-files')
+var filter = require('gulp-filter')
+var uglify = require('gulp-uglify')
+var cssnano = require('gulp-cssnano')
+var merge = require('merge-stream')
 
-import { DEV, DIST_PATH } from '../const'
+var consts = require('../const')
 
-export default () => {
-    let js = filter('**/*.js', { restore: true });
-    let css = filter('**/*.css', { restore: true });
+module.exports.default = function() {
+    var js = filter('**/*.js', { restore: true });
+    var css = filter('**/*.css', { restore: true });
     
     return merge(
         gulp.src(bowerFiles())
         .pipe(js)
         .pipe(concat('bundle.js'))
         .pipe(uglify())
-        .pipe(gulp.dest(path.join(DIST_PATH, 'js')))
+        .pipe(gulp.dest(path.join(consts.DIST_PATH, 'js')))
         .pipe(notify({ message: 'bower-js complete' })),
 
         gulp.src(bowerFiles())
         .pipe(css)
         .pipe(cssnano())
         .pipe(concat('bundle.css'))
-        .pipe(gulp.dest(path.join(DIST_PATH, 'css')))
+        .pipe(gulp.dest(path.join(consts.DIST_PATH, 'css')))
         .pipe(notify({ message: 'bower-css complete' }))
     )
 }

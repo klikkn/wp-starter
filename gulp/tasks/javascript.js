@@ -1,19 +1,19 @@
-import gulp from 'gulp'
-import path from 'path'
-import gulpif from 'gulp-if'
-import uglify from 'gulp-uglify'
-import plumber from 'gulp-plumber'
-import webpackStream from 'webpack-stream'
-import AssetsPlugin from 'assets-webpack-plugin'
-import notify from 'gulp-notify'
-import bs from 'browser-sync'
+var gulp = require('gulp')
+var path = require('path')
+var gulpif = require('gulp-if')
+var uglify = require('gulp-uglify')
+var plumber = require('gulp-plumber')
+var webpackStream = require('webpack-stream')
+var AssetsPlugin = require('assets-webpack-plugin')
+var notify = require('gulp-notify')
+var bs = require('browser-sync')
 
-import { DIST_PATH, DEV, ENTRIES, WATCH } from '../const'
+var consts = require('../const')
 
 /* def: webpack options */
-let options = {
-    devtool: DEV ? 'eval' : null,
-    watch: WATCH,
+var options = {
+    devtool: consts.DEV ? 'eval' : null,
+    entry: consts.ENTRIES.js,
     output: {
         publicPath: '/js/',
         filename: 'bootstrap.js'
@@ -31,26 +31,16 @@ let options = {
             test: /\.json?$/,
             exclude: /(node_modules)/,
             loader: 'json'
-        }, {
-            test: /\.js?$/,
-            exclude: /(node_modules)/,
-            loader: 'babel-loader',
-            query: {
-                presets: ['es2015', 'stage-0'],
-                plugins: [
-                    'add-module-exports'
-                ]
-            }
         }]
     }
 }
 
-export default () => {
-    gulp.src(ENTRIES.app)
+module.exports.default = function() {
+    gulp.src(consts.ENTRIES.js)
         .pipe(plumber())
         .pipe(webpackStream(options))
-        .pipe(gulpif(!DEV, uglify()))
-        .pipe(gulp.dest(path.join(DIST_PATH, 'js')))
+        .pipe(gulpif(!consts.DEV, uglify()))
+        .pipe(gulp.dest(path.join(consts.DIST_PATH, 'js')))
         .pipe(notify({ message: 'js complete' }))
         .pipe(bs.reload({
             stream: true

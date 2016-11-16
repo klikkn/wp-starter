@@ -1,12 +1,12 @@
-import gulp from 'gulp'
-import bs from 'browser-sync'
+var gulp = require('gulp')
+var bs = require('browser-sync')
 
-import { DIST_PATH, PROJECT_NAME, PROXY } from '../const'
+var consts = require('../const')
 
-export default () => {
+module.exports.default = function() {
     bs.init({
-        proxy: PROXY,
-        logPrefix: PROJECT_NAME,
+        proxy: consts.PROXY,
+        logPrefix: consts.PROJECT_NAME,
         port: 9000
     })
 }

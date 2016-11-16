@@ -1,13 +1,13 @@
-import gulp from 'gulp'
-import path from 'path'
-import notify from 'gulp-notify'
-import bs from 'browser-sync'
+var gulp = require('gulp');
+var path = require('path');
+var notify = require('gulp-notify');
+var bs = require('browser-sync');
 
-import { DIST_PATH, ENTRIES } from '../const'
+var consts = require('../const');
 
-export default () => {
-    gulp.src(ENTRIES.assets)
-        .pipe(gulp.dest(DIST_PATH))
+module.exports.default = function() {
+    gulp.src(consts.ENTRIES.assets)
+        .pipe(gulp.dest(consts.DIST_PATH))
         .pipe(notify({ message: 'assets complete' }))
         .pipe(bs.reload({
             stream: true

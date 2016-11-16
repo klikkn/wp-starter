@@ -1,24 +1,27 @@
 /* def: path constants */
-export const PROJECT_NAME = 'wp-starter-kit'
-export const PROXY = 'wp.dev'
-export const DIST_PATH = '../../local/wp-custom-pack/wp-content/themes/wp-custom'
+module.exports.PROJECT_NAME = 'vigenere-cipher'
+module.exports.PROXY = 'wp.dev'
+module.exports.DIST_PATH = '../../local/wp-custom-pack/wp-content/themes/wp-custom'
 
 /* def: tasks entries */
-export const ENTRIES = {
-    app: 'src/js/bootstrap.js',
-    assets: 'src/assets/**/*',
-    template: 'src/theme/**/*',
-    styles: 'src/style/style.styl'
+module.exports.ENTRIES = {
+    js: './src/js/bootstrap.js',
+    assets: './src/assets/**/*',
+    template: './src/theme/**/*',
+    styles: './src/style/style.less'
 }
 
 /* def: watch entries */
-export const WATCHERS = {
-    assets: 'src/assets/**/*',
-    html: 'src/**/*.html',
-    styles: 'src/**/*.styl'
+module.exports.WATCHERS = {
+    assets: './src/assets/**/*',
+    template: './src/**/*.php',
+    styles: './src/**/*.less',
+    js: './src/**/*.js',
+    json: './src/**/*.json'
 }
 
 /* def: environment constants */
-export const ENV = process.env.NODE_ENV
-export const WATCH = (ENV !== 'production')
-export const DEV = ENV !== 'production'
+const ENV = process.env.NODE_ENV
+module.exports.ENV = ENV
+module.exports.WATCH = (ENV !== 'production')
+module.exports.DEV = ENV !== 'production'

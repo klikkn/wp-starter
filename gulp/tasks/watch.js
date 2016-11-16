@@ -1,9 +1,11 @@
-import gulp from 'gulp'
+var gulp = require('gulp')
 
-import { WATCHERS } from '../const'
+var consts = require('../const')
 
-export default () => {
-    gulp.watch(WATCHERS.html, ['html'])
-    gulp.watch(WATCHERS.assets, ['assets'])
-    gulp.watch(WATCHERS.styles, ['styles'])
+module.exports.default = function() {
+    gulp.watch(consts.WATCHERS.template, ['template'])
+    gulp.watch(consts.WATCHERS.assets, ['assets'])
+    gulp.watch(consts.WATCHERS.styles, ['styles'])
+    gulp.watch(consts.WATCHERS.js, ['js'])
+    gulp.watch(consts.WATCHERS.json, ['js'])
 }
