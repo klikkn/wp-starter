@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "start": "gulp"
+    "dev": "gulp"
   },
   "repository": {
     "type": "git",
