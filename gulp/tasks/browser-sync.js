@@ -3,10 +3,10 @@ var bs = require('browser-sync')
 
 var consts = require('../const')
 
-module.exports.default = function() {
-    bs.init({
-        proxy: consts.PROXY,
-        logPrefix: consts.PROJECT_NAME,
-        port: 9000
-    })
+module.exports = function () {
+  bs.init({
+    proxy: consts.PROXY,
+    logPrefix: consts.PROJECT_NAME,
+    port: 9000
+  })
 }

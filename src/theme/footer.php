@@ -38,10 +38,6 @@
     </div>
 </div>
 
-<div id="callback" class="form mfp-hide mfp-with-anim">
-    <div>Привет</div>
-</div>
-
 <script src="<?php bloginfo('stylesheet_directory'); ?>/js/bundle.js"></script>
 <script src="<?php bloginfo('stylesheet_directory'); ?>/js/bootstrap.js"></script>
 

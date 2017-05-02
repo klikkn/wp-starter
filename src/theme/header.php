@@ -26,7 +26,7 @@
 		<div class="header__callback">
 			<a href="tel:89012345678">+7 (890) 123-45-67</a>
 			<a href="#callback" class="button j-open-callback">
-				Оформить заявку111
+				Оформить заявку
 			</a>
 		</div>
 
@@ -49,8 +49,7 @@
 					'link_before' => '',
 					'link_after' => '',
 					'items_wrap' => '<ul id = "%1$s" class = "%2$s">%3$s</ul>',
-					'depth' => 0,
-					'walker' => new custom_walker_nav_menu
+					'depth' => 0
 				);
 			
 				wp_nav_menu( $args );?>

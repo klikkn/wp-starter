@@ -1,7 +1,9 @@
-module.exports.Assets = require('./tasks/assets').default
-module.exports.Bower = require('./tasks/bower').default
-module.exports.BSync = require('./tasks/browser-sync').default
-module.exports.Javascript = require('./tasks/javascript').default
-module.exports.Styles = require('./tasks/styles').default
-module.exports.Template = require('./tasks/template').default
-module.exports.Watch = require('./tasks/watch').default
+module.exports = {
+  Assets: require('./tasks/assets'),
+  Bower: require('./tasks/bower'),
+  BSync: require('./tasks/browser-sync'),
+  Js: require('./tasks/js'),
+  Style: require('./tasks/style'),
+  Php: require('./tasks/php'),
+  Watch: require('./tasks/watch')
+}
