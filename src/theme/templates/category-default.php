@@ -1,9 +1,9 @@
 <?php get_header() ?>
 
 	<?php 
-		// Если нужно фильтровать по id категории
-		// $category = get_the_category();
-		// $cat_id = $category[0]->term_id;
+	  /** Если нужно фильтровать по id категории */
+	  /** $category = get_the_category(); */
+	  /** $cat_id = $category[0]->term_id; */
 	?>
 
 	<h1 class="title category__title">

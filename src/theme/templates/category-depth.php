@@ -1,15 +1,15 @@
 <!-- В разработке -->
 
 <?php 
-/*
-  Для работы миниатюр категорий нужен плагин Categories Images
+/**
+* Для работы миниатюр категорий нужен плагин Categories Images
 */
 ?>
 
 <?php 
-  // Если нужно фильтровать по id категории
-  // $category = get_the_category();
-  // $cat_id = $category[0]->term_id;
+  /** Если нужно фильтровать по id категории */
+  /** $category = get_the_category(); */
+  /** $cat_id = $category[0]->term_id; */
 ?>
 
 <?php get_header() ?>
@@ -21,8 +21,8 @@
 
   <?php 
     $args = array(
-    'parent' => $cat,
-    'hide_empty' => false
+      'parent' => $cat,
+      'hide_empty' => false
     );
     $categories = get_terms( 'category' , $args );
   ?>
