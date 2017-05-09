@@ -6,16 +6,16 @@ module.exports.DIST_PATH = './dist/wordpress/wp-content/themes/custom'
 /* def: tasks entries */
 module.exports.ENTRIES = {
   js: './src/js/index.js',
-  assets: './src/assets/**/*',
+  assets: './src/assets/*',
   php: './src/theme/**/*',
-  styles: './src/style/style.styl'
+  style: './src/style/style.styl'
 }
 
 /* def: watch entries */
 module.exports.WATCHERS = {
-  assets: './src/assets/**/*',
+  assets: './src/assets/*',
   php: './src/**/*.php',
-  styles: './src/**/*.styl',
+  style: './src/**/*.styl',
   js: './src/**/*.js',
   json: './src/**/*.json'
 }
