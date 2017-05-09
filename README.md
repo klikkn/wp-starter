@@ -22,9 +22,3 @@ npm run dev
 
 Project automatically open in 
 [localhost:9000](http://localhost:9000)
-
-### Don't forget stopped docker containers
-
-```
-docker-compose stop
-```
